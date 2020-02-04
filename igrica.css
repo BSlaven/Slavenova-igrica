@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  background-color: #5C7E8C;
+}
+
+button {
+  text-transform: uppercase;
+  border-radius: 4px;
+  margin: 20px;
+  width: 80px;
+  height: min-content;
+}
+
+.osnovnaBoja {
+  text-align: center;
+  font-size: 24px;
+  width: 100%;
+  height: 30px;
+  background-color: #BE6A4E;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  padding-top: 20px;
+  justify-content: center;
+  grid-gap: 15px;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 200px 200px;
+  grid-template-areas:
+    "kutija1 kutija2 kutija3"
+    "kutija4 kutija5 kutija6";
+  background-color: #B7B4A1;
+}
+
+.kutija {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+}
+
+.kutija1 {
+  grid-area: kutija1;
+}
+
+.kutija2 {
+  grid-area: kutija2;
+}
+
+.kutija3 {
+  grid-area: kutija3;
+}
+
+.kutija4 {
+  grid-area: kutija4;
+}
+
+.kutija5 {
+  grid-area: kutija5;
+}
+
+.kutija6 {
+  grid-area: kutija6;
+}
+
+.prikazKutija {
+  display: '';
+}
