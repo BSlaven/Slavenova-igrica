@@ -12,7 +12,6 @@ lakše.addEventListener('click', function() {
   kliknuoTeže = false;
   kutije.forEach(kutija => kutija.style.display = 'none');
   kreirajTriKutije();
-  // console.log(samoTriKutije);
 });
 
 teže.addEventListener('click', function() {
@@ -20,7 +19,6 @@ teže.addEventListener('click', function() {
   kliknuoTeže = true;
   kliknuoLakše = false;
   urediSveKutije();
-  // console.log(kutije);
 });
 
 function findRandomElement (arr) {
