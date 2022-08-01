@@ -1,6 +1,6 @@
 const reset = document.getElementById('reset');
 const lakše = document.querySelector('#easy');
-const teže = document.getElementById('teže');
+const teže = document.querySelector('#harder');
 const kutije = document.querySelectorAll('.kutija');
 const traka = document.querySelector('.osnovnaBoja');
 let kliknuoLakše = false;
