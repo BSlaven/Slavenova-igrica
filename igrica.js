@@ -1,4 +1,4 @@
-const reset = document.getElementById('reset');
+const reset = document.querySelector('#reset');
 const lakše = document.querySelector('#easy');
 const harder = document.querySelector('#harder');
 const boxes = document.querySelectorAll('#main div');
