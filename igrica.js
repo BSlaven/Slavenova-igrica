@@ -1,5 +1,5 @@
 const reset = document.querySelector('#reset');
-const lakše = document.querySelector('#easy');
+const easy = document.querySelector('#easy');
 const harder = document.querySelector('#harder');
 const boxes = document.querySelectorAll('#main div');
 const mainColorBar = document.querySelector('#main-color');
@@ -7,14 +7,14 @@ let kliknuoLakše = false;
 let kliknuoTeže = false;
 let samoTriKutije = [];
 
-lakše.addEventListener('click', function() {
+easy.addEventListener('click', function() {
   kliknuoLakše = true;
   kliknuoTeže = false;
-  kutije.forEach(kutija => kutija.style.display = 'none');
+  boxes.forEach(box => box.style.display = 'none');
   kreirajTriKutije();
 });
 
-teže.addEventListener('click', function() {
+harder.addEventListener('click', function() {
   samoTriKutije = [];
   kliknuoTeže = true;
   kliknuoLakše = false;
@@ -28,8 +28,8 @@ function findRandomElement (arr) {
 }
 
 function brojZaBoju() {
-  const boja = `rgb(${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)})`;
-  return boja;
+  const color = `rgb(${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)})`;
+  return color;
 }
 
 function pogodiBoju(traženiNiz, traženaBoja) {
@@ -39,7 +39,7 @@ function pogodiBoju(traženiNiz, traženaBoja) {
         novaKutija.style.display = 'none';
       } else {
         console.log('pogodak');
-        traka.style.backgroundColor = traženaBoja
+        mainColorBar.style.backgroundColor = traženaBoja
         traženiNiz.forEach(novaKutija => {
           novaKutija.style.backgroundColor = traženaBoja;
           novaKutija.style.display = '';
@@ -50,27 +50,27 @@ function pogodiBoju(traženiNiz, traženaBoja) {
 }
 
 function kreirajTriKutije() {
-  kutije.forEach(kutija => {
-    if(samoTriKutije.length < 3) samoTriKutije.push(kutija)
+  boxes.forEach(box => {
+    if(samoTriKutije.length < 3) samoTriKutije.push(box)
   });
   samoTriKutije.forEach(novaKutija => {
     novaKutija.style.backgroundColor = brojZaBoju();
     novaKutija.style.display = '';
   });
-  let rand = findRandomElement(samoTriKutije);
-  traka.textContent = rand.style.backgroundColor;
-  pogodiBoju(samoTriKutije, traka.textContent)
+  let randomElement = findRandomElement(samoTriKutije);
+  mainColorBar.textContent = randomElement.style.backgroundColor;
+  pogodiBoju(samoTriKutije, mainColorBar.textContent)
 }
 
 
 function urediSveKutije() {
-  kutije.forEach(kutija => {
-    kutija.style.backgroundColor = brojZaBoju();
-    kutija.style.display = '';
+  boxes.forEach(box => {
+    box.style.backgroundColor = brojZaBoju();
+    box.style.display = '';
   });
-  let randomElement = findRandomElement(kutije);
-  traka.textContent = randomElement.style.backgroundColor;
-  pogodiBoju(kutije, traka.textContent);
+  let randomElement = findRandomElement(boxes);
+  mainColorBar.textContent = randomElement.style.backgroundColor;
+  pogodiBoju(boxes, mainColorBar.textContent);
 }
 
 reset.addEventListener('click', function() {
