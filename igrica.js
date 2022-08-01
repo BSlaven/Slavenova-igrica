@@ -1,8 +1,8 @@
 const reset = document.getElementById('reset');
 const lakše = document.querySelector('#easy');
-const teže = document.querySelector('#harder');
-const kutije = document.querySelectorAll('.kutija');
-const traka = document.querySelector('.osnovnaBoja');
+const harder = document.querySelector('#harder');
+const boxes = document.querySelectorAll('#main div');
+const mainColorBar = document.querySelector('#main-color');
 let kliknuoLakše = false;
 let kliknuoTeže = false;
 let samoTriKutije = [];

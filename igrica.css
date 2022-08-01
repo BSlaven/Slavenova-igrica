@@ -31,7 +31,7 @@ button {
   font-family: inherit;
 }
 
-.osnovnaBoja {
+.main-color {
   text-align: center;
   font-size: 24px;
   width: 100%;
@@ -49,39 +49,39 @@ button {
   grid-template-columns: 200px 200px 200px;
   grid-template-rows: 200px 200px;
   grid-template-areas:
-    "kutija1 kutija2 kutija3"
-    "kutija4 kutija5 kutija6";
+    "box1 box2 box3"
+    "box4 box5 box6";
   background-color: #B7B4A1;
 }
 
-.kutija {
+.box {
   width: 200px;
   height: 200px;
   border-radius: 15px;
 }
 
-.kutija1 {
-  grid-area: kutija1;
+.box1 {
+  grid-area: box1;
 }
 
-.kutija2 {
-  grid-area: kutija2;
+.box2 {
+  grid-area: box2;
 }
 
-.kutija3 {
-  grid-area: kutija3;
+.box3 {
+  grid-area: box3;
 }
 
-.kutija4 {
-  grid-area: kutija4;
+.box4 {
+  grid-area: box4;
 }
 
-.kutija5 {
-  grid-area: kutija5;
+.box5 {
+  grid-area: box5;
 }
 
-.kutija6 {
-  grid-area: kutija6;
+.box6 {
+  grid-area: box6;
 }
 
 .prikazKutija {
