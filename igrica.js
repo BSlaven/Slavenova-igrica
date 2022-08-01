@@ -1,5 +1,5 @@
 const reset = document.getElementById('reset');
-const lakše = document.getElementById('lako');
+const lakše = document.querySelector('#easy');
 const teže = document.getElementById('teže');
 const kutije = document.querySelectorAll('.kutija');
 const traka = document.querySelector('.osnovnaBoja');
