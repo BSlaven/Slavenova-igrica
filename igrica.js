@@ -83,3 +83,7 @@ function arangeBoxes(level) {
   }
 }
 
+function createBox(index) {
+  const box = document.createElement('div');
+  box.classList.add('box');
+}
