@@ -76,3 +76,10 @@ function urediSveKutije() {
 reset.addEventListener('click', function() {
   (kliknuoLakše) ? kreirajTriKutije() : urediSveKutije();
 });
+
+function arangeBoxes(level) {
+  if(level === 'hard') {
+    // boxes
+  }
+}
+
