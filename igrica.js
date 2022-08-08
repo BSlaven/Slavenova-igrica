@@ -28,7 +28,7 @@ function findRandomElement (arr) {
   }
 }
 
-function brojZaBoju() {
+function getRandomBoxColor() {
   const color = `rgb(${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)})`;
   return color;
 }
@@ -50,29 +50,28 @@ function pogodiBoju(traženiNiz, traženaBoja) {
   });
 }
 
-function kreirajTriKutije() {
-  boxes.forEach(box => {
-    if(samoTriKutije.length < 3) samoTriKutije.push(box)
-  });
-  samoTriKutije.forEach(novaKutija => {
-    novaKutija.style.backgroundColor = brojZaBoju();
-    novaKutija.style.display = '';
-  });
-  let randomElement = findRandomElement(samoTriKutije);
-  mainColorBar.textContent = randomElement.style.backgroundColor;
-  pogodiBoju(samoTriKutije, mainColorBar.textContent)
-}
+// function kreirajTriKutije() {
+//   boxes.forEach(box => {
+//     if(samoTriKutije.length < 3) samoTriKutije.push(box)
+//   });
+//   samoTriKutije.forEach(novaKutija => {
+//     novaKutija.style.backgroundColor = brojZaBoju();
+//     novaKutija.style.display = '';
+//   });
+//   let randomElement = findRandomElement(samoTriKutije);
+//   mainColorBar.textContent = randomElement.style.backgroundColor;
+//   pogodiBoju(samoTriKutije, mainColorBar.textContent)
+// }
 
-
-function urediSveKutije() {
-  boxes.forEach(box => {
-    box.style.backgroundColor = brojZaBoju();
-    box.style.display = '';
-  });
-  let randomElement = findRandomElement(boxes);
-  mainColorBar.textContent = randomElement.style.backgroundColor;
-  pogodiBoju(boxes, mainColorBar.textContent);
-}
+// function urediSveKutije() {
+//   boxes.forEach(box => {
+//     box.style.backgroundColor = brojZaBoju();
+//     box.style.display = '';
+//   });
+//   let randomElement = findRandomElement(boxes);
+//   mainColorBar.textContent = randomElement.style.backgroundColor;
+//   pogodiBoju(boxes, mainColorBar.textContent);
+// }
 
 reset.addEventListener('click', function() {
   (kliknuoLakše) ? kreirajTriKutije() : urediSveKutije();
@@ -85,11 +84,15 @@ function arangeBoxes(level) {
   } else {
     loopForBoxes(6)
   }
+  let randomElement = findRandomElement(main.children);
+  mainColorBar.textContent = randomElement.style.backgroundColor;
+  pogodiBoju(boxes, mainColorBar.textContent);
 }
 
 function loopForBoxes(number) {
   for(let i = 1; i <= number; i++) {
     const box = createBox(i);
+    box.style.backgroundColor = getRandomBoxColor();
     boxesContainer.appendChild(box);
   }
 }
@@ -100,4 +103,4 @@ function createBox(index) {
   return box;
 }
 
-// arangeBoxes('easy')
+arangeBoxes('easy')
