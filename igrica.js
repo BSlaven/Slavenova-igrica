@@ -4,28 +4,21 @@ const harder = document.querySelector('#harder');
 const boxes = document.querySelectorAll('#main div');
 const boxesContainer = document.querySelector('#main');
 const mainColorBar = document.querySelector('#main-color');
-let kliknuoLakše = false;
-let kliknuoTeže = false;
-let samoTriKutije = [];
 
-easy.addEventListener('click', function() {
-  kliknuoLakše = true;
-  kliknuoTeže = false;
+easy.addEventListener('click', () => {
   boxes.forEach(box => box.style.display = 'none');
-  kreirajTriKutije();
+  arangeBoxes('easy');
 });
 
-harder.addEventListener('click', function() {
-  samoTriKutije = [];
-  kliknuoTeže = true;
-  kliknuoLakše = false;
-  urediSveKutije();
+harder.addEventListener('click', () => {
+  arangeBoxes('hard');
 });
 
-function findRandomElement (arr) {
-  if (arr && arr.length) {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
+function findRandomElement (elements) {
+  if(elements.length < 1) return;
+  const randomIndex = Math.floor(Math.random() * elements.length);
+  const randomElement = elements[randomIndex];
+  return randomElement;
 }
 
 function getRandomBoxColor() {
@@ -50,8 +43,8 @@ function pogodiBoju(traženiNiz, traženaBoja) {
   });
 }
 
-reset.addEventListener('click', function() {
-  (kliknuoLakše) ? kreirajTriKutije() : urediSveKutije();
+reset.addEventListener('click', () => {
+  arangeBoxes('easy');
 });
 
 function arangeBoxes(level) {
