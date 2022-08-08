@@ -32,7 +32,6 @@ function pogodiBoju(traženiNiz, traženaBoja) {
       if(e.target.style.backgroundColor !== traženaBoja) {
         novaKutija.style.display = 'none';
       } else {
-        console.log('pogodak');
         mainColorBar.style.backgroundColor = traženaBoja
         traženiNiz.forEach(novaKutija => {
           novaKutija.style.backgroundColor = traženaBoja;
