@@ -2,6 +2,7 @@ const reset = document.querySelector('#reset');
 const easy = document.querySelector('#easy');
 const harder = document.querySelector('#harder');
 const boxes = document.querySelectorAll('#main div');
+const boxesContainer = document.querySelector('#main');
 const mainColorBar = document.querySelector('#main-color');
 let kliknuoLakše = false;
 let kliknuoTeže = false;
@@ -78,12 +79,25 @@ reset.addEventListener('click', function() {
 });
 
 function arangeBoxes(level) {
-  if(level === 'hard') {
-    // boxes
+  boxesContainer.innerHTML = '';
+  if(level === 'easy') {
+    loopForBoxes(3)
+  } else {
+    loopForBoxes(6)
+  }
+}
+
+function loopForBoxes(number) {
+  for(let i = 1; i <= number; i++) {
+    const box = createBox(i);
+    boxesContainer.appendChild(box);
   }
 }
 
 function createBox(index) {
   const box = document.createElement('div');
-  box.classList.add('box');
+  box.classList.add('box', `box${index}`);
+  return box;
 }
+
+// arangeBoxes('easy')
