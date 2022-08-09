@@ -61,7 +61,11 @@ function arangeBoxes(level) {
 function loopForBoxes(number) {
   for(let i = 1; i <= number; i++) {
     const box = createBox(i);
-    box.style.backgroundColor = getRandomBoxColor();
+    const boxBackgroundColor = getRandomBoxColor();
+    box.style.backgroundColor = boxBackgroundColor;
+    box.addEventListener('click', () => {
+      boxClickHandler(boxBackgroundColor);
+    })
     boxesContainer.appendChild(box);
   }
 }
@@ -70,6 +74,13 @@ function createBox(index) {
   const box = document.createElement('div');
   box.classList.add('box', `box${index}`);
   return box;
+}
+
+function boxClickHandler(color) {
+  const colorToFind = mainColorBar.textContent;
+  if(color === colorToFind) {
+    console.log('Bravo majstore pogodio si');
+  }
 }
 
 arangeBoxes('easy')
