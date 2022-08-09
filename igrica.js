@@ -64,7 +64,7 @@ function loopForBoxes(number) {
     const boxBackgroundColor = getRandomBoxColor();
     box.style.backgroundColor = boxBackgroundColor;
     box.addEventListener('click', () => {
-      boxClickHandler(boxBackgroundColor);
+      boxClickHandler(box, boxBackgroundColor, boxesContainer.children);
     })
     boxesContainer.appendChild(box);
   }
@@ -76,10 +76,16 @@ function createBox(index) {
   return box;
 }
 
-function boxClickHandler(color) {
+function boxClickHandler(box, color, boxes) {
   const colorToFind = mainColorBar.textContent;
   if(color === colorToFind) {
-    console.log('Bravo majstore pogodio si');
+    mainColorBar.style.backgroundColor = color;
+    [...boxes].forEach(myBox => {
+      myBox.style.display = '';
+      myBox.style.backgroundColor = 'color';
+    })
+  } else {
+    box.style.display = 'none'
   }
 }
 
