@@ -6,6 +6,7 @@
 
 body {
   font-family: Arial;
+  background-color: aliceblue;
 }
 
 header {
@@ -13,6 +14,7 @@ header {
   justify-content: center;
   align-items: center;
   height: 50px;
+  padding: 2rem;
   background-color: aliceblue;
   font-family: Arial;
 }
@@ -45,7 +47,9 @@ button:is(:active) {
   font-size: 24px;
   width: 100%;
   height: 30px;
-  background-color: #BE6A4E;
+  /* background-color: #BE6A4E; */
+  background-color: aliceblue;
+  margin-top: 2rem;
 }
 
 .main {
