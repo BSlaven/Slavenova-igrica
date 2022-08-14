@@ -26,22 +26,6 @@ function getRandomBoxColor() {
   return color;
 }
 
-function pogodiBoju(traženiNiz, traženaBoja) {
-  traženiNiz.forEach(novaKutija => {
-    novaKutija.addEventListener('click', function(e) {
-      if(e.target.style.backgroundColor !== traženaBoja) {
-        novaKutija.style.display = 'none';
-      } else {
-        mainColorBar.style.backgroundColor = traženaBoja
-        traženiNiz.forEach(novaKutija => {
-          novaKutija.style.backgroundColor = traženaBoja;
-          novaKutija.style.display = '';
-        });    
-      }
-    });
-  });
-}
-
 reset.addEventListener('click', () => {
   arangeBoxes('easy');
 });
@@ -82,7 +66,7 @@ function boxClickHandler(box, color, boxes) {
     mainColorBar.style.backgroundColor = color;
     [...boxes].forEach(myBox => {
       myBox.style.display = '';
-      myBox.style.backgroundColor = 'color';
+      myBox.style.backgroundColor = color;
     })
   } else {
     box.style.display = 'none'
