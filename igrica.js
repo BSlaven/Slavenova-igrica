@@ -39,6 +39,7 @@ function arangeBoxes(level) {
   }
   let randomElement = findRandomElement(main.children);
   mainColorBar.textContent = randomElement.style.backgroundColor;
+  mainColorBar.style.color = 'black';
   pogodiBoju(boxes, mainColorBar.textContent);
 }
 
@@ -63,7 +64,7 @@ function createBox(index) {
 function boxClickHandler(box, color, boxes) {
   const colorToFind = mainColorBar.textContent;
   if(color === colorToFind) {
-    mainColorBar.style.backgroundColor = color;
+    mainColorBar.style.color = color;
     [...boxes].forEach(myBox => {
       myBox.style.display = '';
       myBox.style.backgroundColor = color;
