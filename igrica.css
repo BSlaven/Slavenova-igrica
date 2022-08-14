@@ -18,7 +18,7 @@ header {
 }
 
 button {
-  background-color: coral;
+  background-color: rgb(123, 169, 230);
   text-transform: uppercase;
   border-radius: 140px;
   margin: 20px;
@@ -29,6 +29,15 @@ button {
   border: none;
   font-weight: bold;
   font-family: inherit;
+  box-shadow: 2px 3px 5px rgb(0, 0, 0, 0.3);
+}
+
+button:is(:hover, :focus) {
+  background-color: rgb(107, 146, 197);
+}
+
+button:is(:active) {
+  box-shadow: none;
 }
 
 .main-color {
