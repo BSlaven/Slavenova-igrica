@@ -13,7 +13,7 @@ header {
   justify-content: center;
   align-items: center;
   height: 50px;
-  background-color: #5C7E8C;
+  background-color: aliceblue;
   font-family: Arial;
 }
 
@@ -51,7 +51,7 @@ button {
   grid-template-areas:
     "box1 box2 box3"
     "box4 box5 box6";
-  background-color: #B7B4A1;
+  background-color: aliceblue;
 }
 
 .box {
