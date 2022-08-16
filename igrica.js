@@ -40,7 +40,6 @@ function arangeBoxes(level) {
   let randomElement = findRandomElement(main.children);
   mainColorBar.textContent = randomElement.style.backgroundColor;
   mainColorBar.style.color = 'black';
-  pogodiBoju(boxes, mainColorBar.textContent);
 }
 
 function loopForBoxes(number) {
